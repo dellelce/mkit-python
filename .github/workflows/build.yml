@@ -2,7 +2,7 @@ name: Build
 on: [push, workflow_dispatch]
 
 env:
-  IMAGE: ghcr.io/dellelce/perl-base
+  IMAGE: ghcr.io/dellelce/python-base
 
 jobs:
   Build:
