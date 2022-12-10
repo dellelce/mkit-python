@@ -20,7 +20,7 @@ jobs:
         run: docker build -t $IMAGE .
       - name: Python check version
         run: |
-              PYTHON_VERSION=$(docker run --rm $IMAGE  /app/python/bin/python -V | awk ' NR == 1 { print $2; } ')
+              PYTHON_VERSION=$(docker run --rm $IMAGE  /app/python/bin/python3 -V | awk ' NR == 1 { print $2; } ')
               echo "PYTHON_VERSION=$PYTHON_VERSION" >> $GITHUB_ENV
       - name: Add tag & push
         run: docker tag $IMAGE $IMAGE:$PYTHON_VERSION && docker push $IMAGE:$PYTHON_VERSION && docker push $IMAGE
