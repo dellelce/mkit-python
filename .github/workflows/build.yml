@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Mkit Python 
+      - name: Mkit Python
         run: docker build -t $IMAGE .
       - name: Python check version
         run: |
